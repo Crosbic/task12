@@ -1,2 +1,5 @@
-package Composite;public interface MenuComponent {
+package Composite;
+
+public interface MenuComponent {
+  void display();
 }

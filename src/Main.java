@@ -1,17 +1,25 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import Composite.*;
+
 public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+  public static void main(String[] args) {
+      MenuCategory pastaCategory = new MenuCategory("Паста");
+      MenuCategory pizzaCategory = new MenuCategory("Пицца");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+      MenuComponent spaghetti = new MenuItem("Спагетти", 400);
+      MenuComponent lasagna = new MenuItem("Ласагна", 300);
+      MenuComponent margheritaPizza = new MenuItem("Маргарита Пицца", 800);
+      MenuComponent pepperoniPizza = new MenuItem("Пепперони Пицца", 700);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
-    }
+      pastaCategory.add(spaghetti);
+      pastaCategory.add(lasagna);
+      pizzaCategory.add(margheritaPizza);
+      pizzaCategory.add(pepperoniPizza);
+
+      MenuCategory mainMenu = new MenuCategory("Главное меню");
+
+      mainMenu.add(pastaCategory);
+      mainMenu.add(pizzaCategory);
+
+      mainMenu.display();
+  }
 }
